@@ -28,8 +28,8 @@ export default function PublicLayout() {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen bg-white gradient-mesh">
-      <AnimatePresence mode="wait">
+    <div className="min-h-screen bg-[#050505]">
+      <AnimatePresence mode="wait" initial={false}>
         <motion.div
           key={location.pathname}
           variants={pageVariants}

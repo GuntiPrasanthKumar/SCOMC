@@ -90,7 +90,7 @@ export default function MainLayout() {
 
         {/* Page Content */}
         <main className="flex-1 p-4 md:p-6 lg:p-8 max-w-[1600px] w-full mx-auto">
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={location.pathname}
               variants={pageVariants}

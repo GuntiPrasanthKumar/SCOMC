@@ -29,18 +29,7 @@ export default function PublicLayout() {
 
   return (
     <div className="min-h-screen bg-[#050505]">
-      <AnimatePresence mode="wait" initial={false}>
-        <motion.div
-          key={location.pathname}
-          variants={pageVariants}
-          initial="initial"
-          animate="animate"
-          exit="exit"
-          className="min-h-screen"
-        >
-          <Outlet />
-        </motion.div>
-      </AnimatePresence>
+      <Outlet />
     </div>
   );
 }

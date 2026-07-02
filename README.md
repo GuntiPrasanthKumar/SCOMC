@@ -1,16 +1,36 @@
-# React + Vite
+# SCOMC - Smart Municipal e-Governance & Citizen Service Management Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SCOMC is a comprehensive web-based e-Governance platform that enables citizens to report civic issues, track complaints, and access municipal services digitally. The system includes complaint management, department-wise ticket assignment, asset monitoring, and analytics dashboards to improve service delivery, transparency, and municipal administration efficiency.
 
-Currently, two official plugins are available:
+## 🌿 Git Branching Strategy & Workflow
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+To maintain code stability and ensure a smooth collaboration process, our team follows a strict Git workflow. **Please read this carefully before contributing.**
 
-## React Compiler
+### 🌳 Branch Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **`main`**: 🚀 **Production-Ready Code**. This branch ALWAYS contains stable, tested, and deployable code. **NEVER push directly to `main`.**
+- **`develop`**: 🛠️ **Integration & Testing**. This is the default branch for active development. All feature branches merge here first for testing before a release to `main`.
+- **Developer Branches**: Each developer has their own dedicated branch for their ongoing work:
+  - `prasanth-dev`
+  - `bharath-dev`
+  - `ramcharan-dev`
+  - `kumarbabu-dev`
 
-## Expanding the ESLint configuration
+### 🔄 The Workflow
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Work on Your Branch**: Checkout your specific developer branch (e.g., `git checkout prasanth-dev`). All your commits should go here.
+2. **Pull from Develop**: Regularly pull changes from `develop` into your branch to stay up to date and avoid massive merge conflicts (`git pull origin develop`).
+3. **Merge to Develop**: Once your feature/fix is complete, open a **Pull Request (PR)** from your developer branch to `develop`.
+4. **Merge to Main**: Once features in `develop` are tested and stable, a release Pull Request will be made from `develop` to `main`.
+
+**Workflow Path:** `Developer Branch` → `develop` → `main`
+
+### 🛡️ Branch Protection Rules (Recommended Setup)
+
+To enforce this workflow, the repository should have branch protection rules configured for both `main` and `develop`:
+- **Require Pull Request reviews before merging**: Ensures code is reviewed by at least one other team member.
+- **Do not allow bypassing the above settings**: Prevents anyone (including admins) from pushing directly to `main`.
+- **Require status checks to pass**: Ensures CI/CD pipelines (builds/tests) pass before merging.
+
+---
+*Built with React, Node.js, and Python.*

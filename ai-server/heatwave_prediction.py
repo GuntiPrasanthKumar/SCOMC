@@ -1,22 +1,48 @@
-def predict_heatwave(temperature: float, humidity: float) -> dict:
+from typing import Optional
+from utils import get_temperature_data, get_humidity_data
+
+def predict_heatwave(
+    temperature: Optional[float] = None,
+    humidity: Optional[float] = None,
+    date: Optional[str] = None,
+    location: Optional[str] = None
+) -> dict:
     """
-    Mock implementation for Heatwave Prediction API.
+    Estimate heatwave risk using standard meteorological rules from input or CSV datasets.
     """
-    # Simple mock logic
-    heat_index = temperature + (0.5 * humidity)
+    # If inputs are missing/None, load from CSV datasets
+    if temperature is None:
+        temperature = get_temperature_data(date, location)
+    if humidity is None:
+        humidity = get_humidity_data(date, location)
+
+    # Simplified Heat Index calculation
+    heat_index = round(temperature + (0.5 * humidity), 2)
     
-    if heat_index > 85:
+    # Classify heatwave risk
+    if temperature > 40.0 or heat_index > 85.0:
         risk = "Critical"
-        warning = "Extreme Heatwave Alert!"
-    elif heat_index > 70:
+        warning = "Extreme Heatwave Alert! Danger of heatstroke."
+        recommendation = "Open Relief Centers & Dispatch Hydration Teams"
+    elif temperature > 35.0 or heat_index > 70.0:
         risk = "High"
-        warning = "Heatwave Warning"
+        warning = "Heatwave Warning. Limit outdoor activities."
+        recommendation = "Send Citizen Alerts & Monitor Vulnerable Groups"
+    elif temperature > 30.0 or heat_index > 55.0:
+        risk = "Medium"
+        warning = "Moderate Heat Warning. Stay hydrated."
+        recommendation = "Review Preparedness & Hydration Advisories"
     else:
         risk = "Normal"
-        warning = "No immediate danger"
+        warning = "No immediate danger."
+        recommendation = "Normal Operations"
         
     return {
+        "temperature_used": temperature,
+        "humidity_used": humidity,
+        "heat_index": heat_index,
         "heatwave_risk": risk,
         "warning": warning,
-        "recommendation": "Open Relief Centers" if risk in ["High", "Critical"] else "Normal Operations"
+        "recommendation": recommendation
     }
+

@@ -1,0 +1,14 @@
+{
+    "mock_predictions": [
+        {
+            "type": "flood",
+            "probability": 75.5,
+            "risk_level": "High"
+        },
+        {
+            "type": "heatwave",
+            "risk": "Critical",
+            "warning": "Extreme Heatwave Alert!"
+        }
+    ]
+}

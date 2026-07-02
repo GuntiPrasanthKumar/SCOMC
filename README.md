@@ -8,9 +8,9 @@ To maintain code stability and ensure a smooth collaboration process, our team f
 
 ### 🌳 Branch Structure
 
-- **`main`**: 🚀 **Production-Ready Code**. This branch ALWAYS contains stable, tested, and deployable code. **NEVER push directly to `main`.**
-- **`develop`**: 🛠️ **Integration & Testing**. This is the default branch for active development. All feature branches merge here first for testing before a release to `main`.
-- **Developer Branches**: Each developer has their own dedicated branch for their ongoing work:
+- **`main`**: 🚀 **Production-Ready Code**. This is the default branch and ALWAYS contains stable, tested, and deployable code. **NEVER push directly to `main`.**
+- **`develop`**: 🛠️ **Integration & Testing**. This branch is for active development integration. All feature branches merge here first for testing before a release to `main`. **NEVER push directly to `develop`.**
+- **Developer Branches**: Each developer has their own dedicated branch for their ongoing work. Every developer should only work on their assigned branch:
   - `prasanth-dev`
   - `bharath-dev`
   - `ramcharan-dev`
@@ -18,10 +18,10 @@ To maintain code stability and ensure a smooth collaboration process, our team f
 
 ### 🔄 The Workflow
 
-1. **Work on Your Branch**: Checkout your specific developer branch (e.g., `git checkout prasanth-dev`). All your commits should go here.
+1. **Work on Your Branch**: Checkout your specific developer branch (e.g., `git checkout bharath-dev`). All your commits should go here.
 2. **Pull from Develop**: Regularly pull changes from `develop` into your branch to stay up to date and avoid massive merge conflicts (`git pull origin develop`).
-3. **Merge to Develop**: Once your feature/fix is complete, open a **Pull Request (PR)** from your developer branch to `develop`.
-4. **Merge to Main**: Once features in `develop` are tested and stable, a release Pull Request will be made from `develop` to `main`.
+3. **Merge to Develop**: Once your feature/fix is complete, open a **Pull Request (PR)** from your developer branch to `develop`. (Requires Approval)
+4. **Merge to Main**: Once features in `develop` are tested and stable, a release Pull Request will be made from `develop` to `main`. (Requires Approval)
 
 **Workflow Path:** `Developer Branch` → `develop` → `main`
 

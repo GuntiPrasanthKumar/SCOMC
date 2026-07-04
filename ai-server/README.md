@@ -119,3 +119,5 @@ Examples of good commit messages:
 > 3. ONLY push to `bharath-dev`.
 > 4. ALL changes must be merged through Pull Requests into `develop`.
 > 5. NEVER merge directly into `main`.
+
+<!-- Co-author verification comment -->
